@@ -1,5 +1,5 @@
 show ver
-do show ip intrface brief
+do show ip interface brief
 hostname csira
 user fact secr student 1234
 vlan 10
@@ -23,3 +23,37 @@ switchport trunk allowed vlan 10,20,30,99
 switchport tunk native vlan 99
 end
 copy run lab11i-1-2
+
+
+
+enable
+configure t
+hostname SW2  
+user jozsi secret 1234  
+ena secret 1234
+vlan 10 
+int vlan 10
+ip address 192.168.1.2 255.255.255.0  
+no shutdown 
+int range Fa0/1-7
+sw mode access    
+switchport access vlan 10 
+
+
+int ran g0/1-2
+sw mode trunk
+sw trunk alowe vlan all
+
+
+
+
+
+
+
+
+
+
+
+
+
+
