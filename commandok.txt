@@ -1,5 +1,5 @@
 show ver
-show ip intrface brief
+do show ip intrface brief
 hostname csira
 user fact secr student 1234
 vlan 10
