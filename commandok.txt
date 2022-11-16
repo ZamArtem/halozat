@@ -45,6 +45,24 @@ sw mode trunk
 sw trunk alowe vlan all
 
 
+SUB INTERFACE
+
+int g0/0.1
+  enc ot1q 10
+  ip add 10.1.1.27
+  
+
+int g0/0.2
+  enc ot1q 20
+  ip add 10.1.2.27
+  
+ 
+int g0/0.3
+  enc ot1q 30
+  ip add 10.1.3.27
+  
+  
+
 
 
 
