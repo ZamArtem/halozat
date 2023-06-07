@@ -12,7 +12,7 @@ hostname R2
 boot-start-marker
 boot-end-marker
 !
-enable secret 5 $1$XNUd$BmTzFzrzb7cOAKML97jo3/
+enable secret cisco
 !
 no network-clock-participate aim 0
 no network-clock-participate aim 1
@@ -27,7 +27,7 @@ no ip domain lookup
 ip domain name wmtech.hu
 no ftp-server write-enable
 !
-username admin password 7 05080F1C22431F5B4A51
+username admin password class
 !
 !
 !
