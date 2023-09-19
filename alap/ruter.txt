@@ -1,0 +1,150 @@
+Current configuration : 2590 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname wmszki-NO6
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$HRg5$QVn9PiqTsiH/SXISRBM50/
+!
+no aaa new-model
+!
+!
+dot11 syslog
+!
+!
+ip cef
+no ip dhcp use vrf connected
+ip dhcp excluded-address 172.16.1.1 255.255.255.0
+ip dhcp excluded-address 172.16.2.1 255.255.255.0
+ip dhcp excluded-address 172.16.3.1 255.255.255.0
+ip dhcp excluded-address 172.16.4.1 255.255.255.0
+ip dhcp excluded-address 172.16.1.254 255.255.255.0
+ip dhcp excluded-address 172.16.2.254 255.255.255.0
+ip dhcp excluded-address 172.16.3.254 255.255.255.0
+ip dhcp excluded-address 172.16.4.254 255.255.255.0
+ip dhcp excluded-address 172.16.1.1
+ip dhcp excluded-address 172.16.2.1
+ip dhcp excluded-address 172.16.3.1
+ip dhcp excluded-address 172.16.4.1
+ip dhcp excluded-address 172.16.4.254
+ip dhcp excluded-address 172.16.3.254
+ip dhcp excluded-address 172.16.2.254
+ip dhcp excluded-address 172.16.1.254
+!
+ip dhcp pool 10
+   network 172.16.1.0 255.255.255.0
+   default-router 172.16.1.254
+   dns-server 8.8.8.8
+!
+ip dhcp pool 20
+   network 172.16.2.0 255.255.255.0
+   default-router 172.16.2.254
+   dns-server 8.8.8.8
+!
+ip dhcp pool 30
+   network 172.16.3.0 255.255.255.0
+   default-router 172.16.3.254
+   dns-server 8.8.8.8
+!
+ip dhcp pool 40
+   network 172.16.4.0 255.255.255.0
+   default-router 172.16.4.254
+   dns-server 8.8.8.8
+!
+!
+ip domain name wmszki.hu
+!
+multilink bundle-name authenticated
+!
+!
+username ADMIN1 password 0 12345
+!
+!
+archive
+ log config
+  hidekeys
+!
+!
+!
+!
+!
+interface BRI0
+ no ip address
+ encapsulation hdlc
+ shutdown
+!
+interface FastEthernet0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface FastEthernet0.1
+ encapsulation dot1Q 10
+ ip address 172.16.1.254 255.255.255.0
+!
+interface FastEthernet0.2
+ encapsulation dot1Q 20
+ ip address 172.16.2.254 255.255.255.0
+!
+interface FastEthernet0.3
+ encapsulation dot1Q 30
+ ip address 172.16.3.254 255.255.255.0
+!
+interface FastEthernet0.4
+ encapsulation dot1Q 40
+ ip address 172.16.4.254 255.255.255.0
+!
+interface FastEthernet1
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface FastEthernet2
+!
+interface FastEthernet3
+!
+interface FastEthernet4
+!
+interface FastEthernet5
+!
+interface FastEthernet6
+!
+interface FastEthernet7
+!
+interface FastEthernet8
+!
+interface FastEthernet9
+!
+interface Vlan1
+ no ip address
+!
+ip default-gateway 172.16.1.254
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+!
+end
+
