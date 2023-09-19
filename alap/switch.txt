@@ -1,0 +1,199 @@
+Current configuration : 4050 bytes
+!
+! Last configuration change at 02:19:58 UTC Mon Mar 1 1993 by ADMIN1
+!
+version 15.0
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname WMSZKI-No6
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$ZZU4$Crl8L6rlSTrylspo/X0mO1
+!
+username ADMIN1 password 0 12345
+no aaa new-model
+system mtu routing 1500
+!
+!
+no ip domain-lookup
+ip domain-name wmszki.hu
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/1
+ switchport access vlan 10
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/2
+ switchport access vlan 10
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/3
+ switchport access vlan 10
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/4
+ switchport access vlan 10
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/5
+ switchport access vlan 10
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/6
+ switchport access vlan 10
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/7
+ switchport access vlan 20
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/8
+ switchport access vlan 20
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/9
+ switchport access vlan 20
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/10
+ switchport access vlan 20
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/11
+ switchport access vlan 20
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/12
+ switchport access vlan 20
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/13
+ switchport access vlan 30
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/14
+ switchport access vlan 30
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/15
+ switchport access vlan 30
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/16
+ switchport access vlan 30
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/17
+ switchport access vlan 30
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/18
+ switchport access vlan 30
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/19
+ switchport access vlan 30
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/20
+ switchport access vlan 40
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/21
+ switchport access vlan 40
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/22
+ switchport access vlan 40
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/23
+ switchport access vlan 40
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface FastEthernet0/24
+ switchport access vlan 40
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!
+interface GigabitEthernet0/1
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan10
+ ip address 172.16.1.1 255.255.255.0
+!
+interface Vlan20
+ ip address 172.16.2.1 255.255.255.0
+!
+interface Vlan30
+ ip address 172.16.3.1 255.255.255.0
+!
+interface Vlan40
+ ip address 172.16.4.1 255.255.255.0
+!
+ip default-gateway 172.16.1.254
+ip http server
+ip http secure-server
+!
+vstack
+!
+line con 0
+ password 12345
+ login local
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+end
